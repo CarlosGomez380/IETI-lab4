@@ -22,11 +22,11 @@ export class Login extends React.Component{
                         <Avatar className="avatar">
                             <LockIcon />
                         </Avatar>
-                        <Typography variant="h2">Sign in</Typography>
+                        <Typography variant="h2"> Task Planner</Typography>
                         <form className="form">
                             <FormControl margin="normal" required fullWidth>
-                                <InputLabel htmlFor="email">Email Address</InputLabel>
-                                <Input id="email" name="email" autoComplete="email" autoFocus />
+                                <InputLabel htmlFor="email">Username</InputLabel>
+                                <Input id="email" name="email"  autoFocus />
                             </FormControl>
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="password">Password</InputLabel>
@@ -44,7 +44,7 @@ export class Login extends React.Component{
                                 color="primary"
                                 className="submit"
                             >
-                                Sign in
+                                Login
                             </Button>
                         </form>
                     </Paper>

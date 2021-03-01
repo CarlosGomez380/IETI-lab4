@@ -23,7 +23,7 @@ export class Login extends React.Component{
                             <LockIcon />
                         </Avatar>
                         <Typography variant="h2"> Task Planner</Typography>
-                        <form className="form">
+                        <form className="form" id="form">
                             <FormControl margin="normal" required fullWidth>
                                 <InputLabel htmlFor="email">Username</InputLabel>
                                 <Input id="email" name="email"  autoFocus />
@@ -38,11 +38,11 @@ export class Login extends React.Component{
                                 />
                             </FormControl>
                             <Button
-                                type="submit"
                                 fullWidth
                                 variant="contained"
                                 color="primary"
                                 className="submit"
+                                onClick={this.handleClick}
                             >
                                 Login
                             </Button>
@@ -53,4 +53,10 @@ export class Login extends React.Component{
         );
     }
 
+    handleClick(){
+        if(document.getElementById('email').value == localStorage.getItem('username') && document.getElementById('password').value == localStorage.getItem('password')){
+            localStorage.setItem('isLoggedIn',true);
+            document.getElementById('form').submit();
+        }
+    }
 }

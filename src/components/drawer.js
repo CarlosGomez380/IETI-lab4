@@ -16,6 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { useLocation } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -62,17 +63,27 @@ function ResponsiveDrawer(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const handleClick= () => {
+
+    localStorage.setItem('isLoggedIn',false);
+  };
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['profile', 'logout'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <AccountCircleIcon /> : <ExitToAppIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+
+        
+        
+        <ListItem button>
+            <ListItemIcon><AccountCircleIcon /></ListItemIcon>
+            <ListItemText primary='profile' />
+        </ListItem>
+        <ListItem onClick={handleClick} button>
+            <ListItemIcon><ExitToAppIcon /></ListItemIcon>
+            <ListItemText primary='logout' />
+        </ListItem>
       </List>
 
     </div>

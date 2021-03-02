@@ -68,15 +68,17 @@ function ResponsiveDrawer(props) {
     props.goLogOut();
   };
 
+  const handleProfile= () =>{
+    console.log("me meti");
+    props.changeProfile();
+  }
+
   const drawer = (
     <div>
       <div className={classes.toolbar} />
       <Divider />
       <List>
-
-        
-        
-        <ListItem button>
+        <ListItem onClick={handleProfile} button>
             <ListItemIcon><AccountCircleIcon /></ListItemIcon>
             <ListItemText primary='profile' />
         </ListItem>
